@@ -4,8 +4,8 @@ import time
 GPIO.setmode(GPIO.BCM)
 GPIO.setwarnings(False)
 
-GPIO.setup(12,GPIO.OUT)
-p = GPIO.PWM(12, 100)
+GPIO.setup(21,GPIO.OUT)
+p = GPIO.PWM(21, 100)
 p.start(100)
 
 while True:

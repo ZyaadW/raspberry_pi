@@ -1,15 +1,16 @@
 from gpiozero import Servo,MotionSensor
 from time import sleep
 
+
 pir = MotionSensor(23)
 teller = 0
 myGPIO=17
 servo = Servo(myGPIO)
+huidige_status = False
+vorige_status = False
 
 def teller1(teller):
-    pir.wait_for_motion()
     teller+=1
-    pir.wait_for_no_motion()
     print(teller)
     return teller
 
@@ -23,10 +24,14 @@ def servo1():
 
 
 while True:
-    if pir._active_state:
-        print("test")
+    vorige_status = huidige_status
+    huidige_status = pir.motion_detected
+    print(pir.motion_detected)
+    if vorige_status == False and huidige_status == True:
         teller = teller1(teller)
-    #servo1()
+    sleep(0.1)
+
+   
     
     
 
