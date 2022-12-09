@@ -14,7 +14,7 @@ while True: #als waar
    varLedB.on() #blauw aan
    varLedG.on() #groen aan
    varLedR.on() #rood aan
-   sleep(delay) #wacht 300ms
+   sleep(delay) #wacht 300ms   
    varLedB.on() #blauw aan
    varLedG.off() #groen uit
    varLedR.off() #rood uit
