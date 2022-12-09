@@ -89,8 +89,8 @@ while True: # wanneer waar
         print(error.args[0]) # print dit
         time.sleep(2) # wacht 2 seconden
         continue # ga door
+    except KeyboardInterrupt: # behalve als er een onderbreking komt van het toetsenbord (control + c)
+        print("programma is onderbroken") # print deze tekst
     except Exception as error: # behalve als er een onbekende fout isn en benoem dit als variabele
         dhtDevice.exit() # ga uit de sensor (dht11)
         raise error # stuur een foutmelding
-                             
-   # except KeyboardInterrupt: # behalve als er een onderbreking komt van het toetsenbord (control + c)
