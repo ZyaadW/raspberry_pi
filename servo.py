@@ -5,8 +5,9 @@ servo = Servo(myGPIO) # variabele servo is gelijk aan myGpio
 try: # probeer
     while True: # als waar
         waarde = float(input("wat is de waarde: ")) #  variabele is gelijk een je input
-        getal = float(waarde/90-1) # variabele gelijk aan deze formule
-        if getal > -1 and getal < 181: # als de variabele
+        if waarde > 0.0 and waarde < 180.0: # als de variabele
+            getal = float(waarde/90-1) # variabele gelijk aan deze formule
+       
             servo.value = getal # waarde van servo gelijk aan variabele
         else: # anders doe
             print("geef een getal tussen 0 en 180")  # print dit 
