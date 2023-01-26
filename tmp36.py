@@ -9,7 +9,8 @@ def readSPI(channel):
     adc = spi.xfer2([1, (8+channel) <<4,0])
     data = ((adc[1] & 3) <<8) +adc[2]
     spanning = (data /1024.0) * 3.3
-    temperature = ((spanning - 0.5) * 100.0)
+        
+        temperature = ((spanning - 0.5) * 100.0)
     return(temperature)
 
 channelLDR = 0 # variabele is gelijk aan 0
